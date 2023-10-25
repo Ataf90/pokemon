@@ -1,38 +1,56 @@
 * {
   box-sizing: border-box;
-
+    font-family: "Pokemon Solid", sans-serif;
 }
 body {
+  margin: 10%;
   background-image: url(/assests/image/bgPokemon.jpg);
-  background-size: 100%;
+  /* background-size: 100%; */
   background-repeat: no-repeat;
   background-position: center;
-  width: 90%;
-
-  display: flex;
-  justify-content: space-between;
-  background-color: white;
 }
+main{
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+
+  font-size: 40px;
+  justify-content: center;
+}
+
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: left;
+  /* justify-content: center; */
+  align-items: center;
+  height: 100%;
+  width: 60%;
   background-color: rgba(252, 252, 252, 0.945);
-  box-shadow: rgba(55, 28, 28, 0.16) 0px 10px 36px 0px,
+  box-shadow: rgba(55, 28, 28, 0.377) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   border-radius: 10px;
 }
-.select {
-  background-color: rgb(207, 207, 27);
+
+.selecte {
+  background-color: rgba(230, 227, 218, 0.731);
+  width: 180px;
+  justify-content: center;
+}
+.container-perform ul > li {
+  margin: 3px auto;
+  padding: 23px;
+
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
 }
 .img-choix {
-  width: 30%;
-  height: 50%;
+  width: 40%;
+  height: 60%;
   border-radius: 50%;
-  box-shadow: rgb(122, 50, 36) 0px 20px 30px -10px;
-}
-.nom-p {
-  font-size: 78px;
-  width: 43px;
-  
+  box-shadow: rgb(24, 23, 22) 0px 20px 30px -10px;
+  background: transparent;
 }
