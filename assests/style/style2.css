@@ -1,19 +1,63 @@
 * {
   box-sizing: border-box;
+  font-family: 'Spirit Ginger', sans-serif;
+
 }
 body {
   margin: 10%;
-  background-image: url(/assests/image/bgPokemon.jpg);
+  background: url(/assests/image/bgPokemon-v2.jpg) no-repeat center center fixed;
   /* background-size: 100%; */
   background-repeat: no-repeat;
   background-position: center;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', 
 }
-main {
+main{
   display: flex;
   justify-content: center;
-  background-color: rgba(252, 252, 252, 0.945);
-  box-shadow: rgba(55, 28, 28, 0.377) 0px 10px 36px 0px,
-    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+
+
+.container {
+  margin-top: 40px;
+  background-color: rgba(74, 177, 241, 0.813);
   border-radius: 10px;
   font-size: 20px;
+  box-shadow: rgba(3, 101, 214, 0.683) 0px 0px 0px 3px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.container-perform{
+  margin: 2px auto;
+  padding: 2cap;
+  font-size: 18px;
+  background-color: rgba(1, 36, 51, 0.249);
+  
+  border-radius: 50% ;
+}
+.field-set{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+}
+.selcte{
+
+  text-align: center;
+  background-color: rgba(9, 134, 236, 0.578);
+
+}
+.option{
+  text-align: center;
+  background-color: transparent;
+  box-shadow: rgba(3, 101, 214, 0.683) 0px 0px 0px 3px;
+}
+.img-choix {
+  display: flex;
+  justify-content: center;
+  width: 24rem;
+  border-radius: 50%;
+  box-shadow: rgb(24, 23, 22) 0px 20px 30px -10px;
+  /* background: transparent; */
 }

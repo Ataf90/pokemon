@@ -27,7 +27,7 @@ main{
   align-items: center;
   height: 100%;
   width: 60%;
-  background-color: rgba(252, 252, 252, 0.945);
+  background-color: rgba(200, 226, 241, 0.813);
   box-shadow: rgba(55, 28, 28, 0.377) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   border-radius: 10px;
@@ -44,7 +44,6 @@ main{
   font-size: 22px;
   display: flex;
   flex-direction: column;
-  color: chartreuse;
   background: transparent;
 }
 .img-choix {
@@ -52,5 +51,5 @@ main{
   height: 60%;
   border-radius: 50%;
   box-shadow: rgb(24, 23, 22) 0px 20px 30px -10px;
-  background: transparent;
+  /* background: transparent; */
 }
