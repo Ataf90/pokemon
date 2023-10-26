@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-    font-family: "Pokemon Solid", sans-serif;
+    
 }
 body {
   margin: 10%;
@@ -15,7 +15,7 @@ main{
 }
 
 .header {
-
+  font-family: "Pokemon Solid", sans-serif;
   font-size: 40px;
   justify-content: center;
 }
@@ -41,10 +41,10 @@ main{
 .container-perform ul > li {
   margin: 3px auto;
   padding: 23px;
-
   font-size: 22px;
   display: flex;
   flex-direction: column;
+  color: chartreuse;
   background: transparent;
 }
 .img-choix {

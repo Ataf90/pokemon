@@ -1,4 +1,4 @@
-// //
+//------------ Permière crée un API-----------------------------
 
 console.log("chargé");
 let datasAxios = await axiosTest();
@@ -7,10 +7,11 @@ async function axiosTest() {
     const response = await axios.get("https://pokebuildapi.fr/api/v1/pokemon");
     return response.data;
 }
-
+//------------ End crée un API-----------------------------
 //------------- crée mon main----------- 
 const main = document.createElement("main");
     document.body.appendChild(main);
+//--------------------------------------    
 //-------------- crée mon container 
     let container = document.createElement("div");
         container.classList.add("container")
@@ -19,7 +20,7 @@ const main = document.createElement("main");
             let header = document.createElement("h1");
                 header.innerText = "Information Pokemon";
                 header.classList.add("header");
-                container.appendChild(header)
+                container.appendChild(header);
 //---------- crée mon selection pour faire list dropDown
             let selection = document.createElement("select");
                 selection.setAttribute("id", "select")
@@ -85,7 +86,7 @@ datasAxios.forEach(pokemon => {
 selection.addEventListener("change", () => {
     if (selection.value == 0) {
         document.querySelector(".img-choix").setAttribute("src", "/assests/image/question.png");
-        document.querySelector
+        
         
     } else {
         console.log("Sélection : ", selection.value);

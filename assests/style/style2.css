@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 10%;
+  background-image: url(/assests/image/bgPokemon.jpg);
+  /* background-size: 100%; */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+main {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(252, 252, 252, 0.945);
+  box-shadow: rgba(55, 28, 28, 0.377) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  border-radius: 10px;
+  font-size: 20px;
+}
