@@ -43,7 +43,7 @@ main{
   justify-content:center;
 }
 .selcte{
-
+  padding: 3px;
   text-align: center;
   background-color: rgba(9, 134, 236, 0.578);
 

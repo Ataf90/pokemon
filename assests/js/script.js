@@ -81,7 +81,7 @@ datasAxios.forEach(pokemon => {
 
     let imageChoix = document.createElement("img");
         imageChoix.classList.add("img-choix");
-        imageChoix.appendChild(imageChoix)
+        container.appendChild(imageChoix)
 
 selection.addEventListener("change", () => {
     if (selection.value == 0) {
