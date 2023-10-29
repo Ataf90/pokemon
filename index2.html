@@ -12,8 +12,64 @@
     <title>Pokemon-version-2</title>
 </head>
 
-<body>
 
+<body>
+    <header>
+
+    </header>
+    <main>
+        <div id="container">
+            <h1>Inforamtion Pokemon</h1>
+            <div id="champ_parent">
+                <fieldset id="fieldSet">
+                    <legend>Recherch Pokemon</legend>
+                <div id="cadre_radio">
+                    <input type="radio"name="choix" id="button_nom" value="name">
+                    <label for="button_nom">Par nom</label>
+                    <input type="radio"name="choix" id="buttn_element" value="element">
+                    <label for="button_element">Par type</label>
+                        <div id="cadre_select"></div>  
+                </fieldset>
+                <div id="cadre_button">
+                    <button id="button_recherche">Recercher</button>
+                </div>
+            <div id="cadre_travail">
+                <div id="cadre_liste"></div>
+                <div id="cadre_travail_titre"></div>
+                <div id="cadre_travail_data">
+                    <div id="cadre_travail_image"></div>
+                    <div id="cadre_travail_stats">
+                        <div id="colonneM">
+                            <div class="celluleM" id="hp_titre">HP</div>
+                            <div class="celluleM" id="attack_titre">Attack</div>
+                            <div class="celluleM" id="defense_titre">Defense</div>
+                            <div class="celluleM" id="s_attack">S-Attack</div>
+                            <div class="celluleM" id="speed_titre">S-Defense</div>
+                            <div class="celluleM" id="speed_titre">Speed</div>
+                        </div>
+                        <div id="colonneD">
+                            <div class="cellule" id="hp"></div>
+                            <div class="cellule" id="speed"></div>
+                            <div class="cellule" id="attack"></div>
+                            <div class="cellule" id="defense"></div>
+                            <div class="cellule" id="special_attack"></div>
+                            <div class="cellule" id="special_defense"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="cadre_elements">
+                    <p>Type :</p>
+                    <div id="elements"></div>
+                </div>
+                <div id="cadre_evolution">
+                    <p>Evolue en :</p>
+                    <div id="evolution"></div>
+                </div>
+            </div>    
+        </div>
+     </div>
+        </main>
+        <footer></footer>
 </body>
 
 </html>
