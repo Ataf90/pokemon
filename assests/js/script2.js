@@ -125,15 +125,16 @@ function listParNom(){
 }
 function listParElement(){
     let btnElemnt = document.getElementById("button_element");
+    btnElemnt.forEach
     console.log("séléction element ")
     if(btnElemnt.type == "checked"){
-        selectionList.value =0;
-        let newSelection = document
-    }
-    let trouvUnElement = datasAxios.find((element) =>(element.apiResistances) == (btnElemnt.value));
+        
+            let trouvUnElement = datasAxios.find((element) =>(element.apiResistances) == (btnElemnt.value));
     console.log("pokemon traouve par Element",trouvUnElement.apiResistances);
     // imageChoix.style.display= "block";
     image.setAttribute("src",trouvUnElement.image)
+    }
+
 }
 
     document.getElementById("button_recherche").addEventListener("click", ()=>{
