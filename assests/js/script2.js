@@ -4,7 +4,14 @@ console.log("chargé");
 let datasAxios = await axiosTest();
 console.log("Datas via Axios : ", datasAxios);
 async function axiosTest() {
-    const response = await axios.get("https://pokebuildapi.fr/api/v1/pokemon");
+    const response = await axios.get("https://pokebuildapi.fr/api/v1/pokemon/limit/50");
+    return response.data;
+}
+//-------- DATAAXIOS POUT types
+let datasAxiostype = await axiosType();
+console.log("Datas type via Axios : ", datasAxiostype);
+async function axiosType(){
+    const response = await axios.get("https://pokebuildapi.fr/api/v1/types");
     return response.data;
 }
 //----------------------- END Axios méthode ----------------------
@@ -65,15 +72,19 @@ document.getElementById("button_nom").addEventListener("click",()=>{
 
     
 })
-datasAxios.forEach(pokemon => {
-    // crée un element pour récuper tous les nom des pokemon de API 
-    let option = document.createElement("option");
-    // console.log("pokemon :", pokemon);
-    // pour afficer le nome de chque Pkemons 
-    option.innerText= pokemon.name;
-    selectionList.appendChild(option);
-});
 
+
+
+listParNom();
+function listParNom(){
+    datasAxios.forEach(pokemon => {
+        // crée un element pour récuper tous les nom des pokemon de API 
+        let option = document.createElement("option");
+        // console.log("pokemon :", pokemon);
+        // pour afficer le nome de chque Pkemons 
+        option.innerText= pokemon.name;
+        selectionList.appendChild(option);
+    });
 selectionList.addEventListener("change", ()=>{
     if(selectionList.value == 0){
         image.setAttribute("src", "/assests/image/question.png");
@@ -105,37 +116,87 @@ selectionList.addEventListener("change", ()=>{
             let champType = document.getElementById("elements");
                 champType.innerText="";
             let champEvolution = document.getElementById("evolution") ;
-                champEvolution.innerText=""; 
-            let arrayTypeResults =[];    
+                champEvolution.innerText="";    
     
     }
+
 })
-
-function listParNom(){
-
-    let btnNom = document.getElementById("button_nom");
-    console.log("seléction nom :" ,selectionList.value);
-    if(btnNom.type == "checked"){
-        let trouvUnpkemon = datasAxios.find((element)=> element.name == selection.value);
-        console.log("pokemon trouve", trouvUnpkemon.image);
-        // imageChoix.style.display= "block";  
-    }
-
-
 }
+document.querySelectorAll("input[type='radio']").forEach(radio => {
+    radio.addEventListener("change", changementstatutRadio);
+});
+let trouvUnpkemon = datasAxios.find((pokemon)=> pokemon.name == selectionList.value);
+    let cadreElement = document.querySelector("cadre_elements").innerText = trouvUnpkemon.tye
+    
+    function changementstatutRadio(eventRadio){
+        selectionList.innerHTML="";
+        let radioElement = eventRadio.target;
+        console.log("radio element : ", radioElement);
+        if (eventRadio.target.value == "element") {
+            datasAxiostype.forEach(element => {
+                let optionElment = document.createElement("option");
+                optionElment.innerText = element.name;
+                selectionList.appendChild(optionElment);
+            })
+
+        } else {
+            datasAxios.forEach(pokemon => {
+                // crée un element pour récuper tous les nom des pokemon de API 
+                let option = document.createElement("option");
+                // console.log("pokemon :", pokemon);
+                // pour afficer le nome de chque Pkemons 
+                option.innerText= pokemon.name;
+                selectionList.appendChild(option);
+            });
+        }
+            
+    }                
+listParElement();
 function listParElement(){
-    let btnElemnt = document.getElementById("button_element");
-    btnElemnt.forEach
-    console.log("séléction element ")
-    if(btnElemnt.type == "checked"){
+    selectionList.addEventListener("change", ()=>{
+        if(selectionList.value == 0){
+            image.setAttribute("src", "/assests/image/question.png");
+        }else{
+    
+            console.log("seléction :" ,selectionList.value);
+            let trouvUnpkemon = datasAxios.find((pokemon)=> pokemon.name == selectionList.value);
+
+
+            // console.log("pokemon type: ", trouvUnpkemonApiTypes.name);
+            // console.log("pokemon trouve", trouvUnpkemon.image);
+            // console.log("API types " , trouvUnpkemonApiTypes.types);
+            // imageChoix.style.display= "block";
+            image.setAttribute("src",trouvUnpkemon.image)
+          
+                console.log("Trouve : ", trouvUnpkemon);
+                let recuperNomPokemon = trouvUnpkemon.name;
+                    cadreTitre.innerText=recuperNomPokemon;
+                let recupperHp = trouvUnpkemon.stats.HP;
+                let recupperAttack = trouvUnpkemon.stats.attack;
+                let recupperDfense = trouvUnpkemon.stats.defense;
+                let recupperSpecialAttack = trouvUnpkemon.stats.special_attack;
+                let recupperSpecialDefense = trouvUnpkemon.stats.special_defense;
+                let recupperSpeed = trouvUnpkemon.stats.speed;
+    
+                    hp.innerText =+ recupperHp;
+                    attack.innerText=+ recupperAttack;
+                    defense.innerText =+ recupperDfense;
+                    special_attack.innerText =+ recupperSpecialDefense;
+                    special_defense.innerText =+ recupperSpecialAttack;
+                    speed.innerText =+ recupperSpeed;
+    
+                let champType = document.getElementById("elements");
+                    champType.innerText="";
+                let champEvolution = document.getElementById("evolution") ;
+                    champEvolution.innerText="";    
         
-            let trouvUnElement = datasAxios.find((element) =>(element.apiResistances) == (btnElemnt.value));
-    console.log("pokemon traouve par Element",trouvUnElement.apiResistances);
-    // imageChoix.style.display= "block";
-    image.setAttribute("src",trouvUnElement.image)
+        }
+    
+    })
     }
 
-}
+
+
 
     document.getElementById("button_recherche").addEventListener("click", ()=>{
         listParNom();        
@@ -143,10 +204,6 @@ function listParElement(){
     document.getElementById("button_recherche").addEventListener("click",()=>{
         listParElement();
     })
-for (let i  = 0; i  < trouvUnpkemon.apiResistances.length; i ++) {
-   console.log("trouve un pokemon par element ", i);
-    
-}
             
                
 

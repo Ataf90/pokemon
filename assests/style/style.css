@@ -3,7 +3,6 @@
     
 }
 body {
-  margin: 10%;
   background-image: url(/assests/image/bgPokemon.jpg);
   /* background-size: 100%; */
   background-repeat: no-repeat;
@@ -25,12 +24,13 @@ main{
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
-  height: 100%;
+  min-height: 80vh;
   width: 60%;
-  background-color: rgba(200, 226, 241, 0.813);
+  background-color: rgba(200, 226, 241, 0.74);
   box-shadow: rgba(55, 28, 28, 0.377) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   border-radius: 10px;
+  gap: 2rem;
 }
 
 .selecte {
@@ -47,8 +47,9 @@ main{
   background: transparent;
 }
 .img-choix {
-  width: 40%;
-  height: 60%;
+
+  width: 50%;
+  height: auto;
   border-radius: 50%;
   box-shadow: rgb(24, 23, 22) 0px 20px 30px -10px;
   /* background: transparent; */

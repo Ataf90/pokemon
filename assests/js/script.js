@@ -68,7 +68,7 @@ const main = document.createElement("main");
                     option.value = 0;
                     option.setAttribute("selected", true); // default choice 
                     selection.appendChild(option);
-//----Détails des performances de chaque Pokemons---------
+//----Gére mes listes des pokemons ---------
 
 
 datasAxios.forEach(pokemon => {
@@ -101,13 +101,14 @@ selection.addEventListener("change", () => {
         let recupperSpecialAttack = pokemonTrouve.stats.special_attack;
         let recupperSpecialDefense = pokemonTrouve.stats.special_defense;
         let recupperSpeed = pokemonTrouve.stats.speed;
-            hpElement.innerText= "HP : " + recupperHp + "%";
+            hpElement.innerText= "HP : " + recupperHp;
             attackElement.innerText= "Attack :  " + recupperAttack;
             defensElement.innerText= "Defense :  " + recupperDfense;
             specialAttackElement.innerText= "Special attack :  " + recupperSpecialDefense;
             specialDefElement.innerText= "Special defense :  " + recupperSpecialAttack;
             speedElement.innerText= "Speed : " + recupperSpeed;
             console.log("Trouve : ", pokemonTrouve);
+
     }
 
 
