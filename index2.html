@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="/assests/js/script2.js"></script>
+    <script type="module" src="/assests/js/script2.js" defer></script>
     <link rel="stylesheet" href="/assests/style/style2.css">
     <link href="https://fonts.cdnfonts.com/css/spirit-ginger" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -23,53 +23,54 @@
             <div id="champ_parent">
                 <fieldset id="fieldSet">
                     <legend>Recherch Pokemon</legend>
-                <div id="cadre_radio">
-                    <input type="radio"name="choix" id="button_nom" value="name" checked>
-                    <label for="button_nom">Par nom</label>
-                    <input type="radio"name="choix" id="button_element" value="element">
-                    <label for="button_element">Par type</label>
-                        <div id="cadre_select"></div>  
+                    <div id="cadre_radio">
+                        <input type="radio"name="choix" id="button_nom" value="name" checked>
+                        <label for="button_nom">Par nom</label>
+                        <input type="radio"name="choix" id="button_element" value="element">
+                        <label for="button_element">Par type</label>
+                            <div id="cadre_select"></div> 
+                    </div>
                 </fieldset>
                 <div id="cadre_button">
                     <button id="button_recherche">Rechercher</button>
                 </div>
-            <div id="cadre_travail">
-                <div id="cadre_liste"></div>
-                <div id="cadre_travail_titre"></div>
-                <div id="cadre_travail_data">
-                    <div id="cadre_travail_image"></div>
-                    <div id="cadre_travail_stats">
-                        <div id="colonneM">
-                            <div class="celluleM" id="hp_titre">HP</div>
-                            <div class="celluleM" id="attack_titre">Attack</div>
-                            <div class="celluleM" id="defense_titre">Defense</div>
-                            <div class="celluleM" id="s_attack">S-Attack</div>
-                            <div class="celluleM" id="speed_titre">S-Defense</div>
-                            <div class="celluleM" id="speed_titre">Speed</div>
-                        </div>
-                        <div id="colonneD">
-                            <div class="cellule" id="hp"></div>
-                            <div class="cellule" id="speed"></div>
-                            <div class="cellule" id="attack"></div>
-                            <div class="cellule" id="defense"></div>
-                            <div class="cellule" id="special_attack"></div>
-                            <div class="cellule" id="special_defense"></div>
+                <div id="cadre_travail">
+                    <div id="cadre_liste"></div>
+                    <div id="cadre_travail_titre"></div>
+                    <div id="cadre_travail_data">
+                        <div id="cadre_travail_image"></div>
+                        <div id="cadre_travail_stats">
+                            <div id="colonneM">
+                                <div class="celluleM" id="hp_titre">HP</div>
+                                <div class="celluleM" id="attack_titre">Attack</div>
+                                <div class="celluleM" id="defense_titre">Defense</div>
+                                <div class="celluleM" id="s_attack">S-Attack</div>
+                                <div class="celluleM" id="speed_titre">S-Defense</div>
+                                <div class="celluleM" id="speed_titre">Speed</div>
+                            </div>
+                            <div id="colonneD">
+                                <div class="cellule" id="hp"></div>
+                                <div class="cellule" id="speed"></div>
+                                <div class="cellule" id="attack"></div>
+                                <div class="cellule" id="defense"></div>
+                                <div class="cellule" id="special_attack"></div>
+                                <div class="cellule" id="special_defense"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div id="cadre_elements">
-                    <p>Type :</p>
-                    <div id="elements"></div>
-                </div>
-                <div id="cadre_evolution">
-                    <p>Evolue en :</p>
-                    <div id="evolution"></div>
-                </div>
-            </div>    
+                    <div id="cadre_elements">
+                        <p>Type :</p>
+                        <div id="elements"></div>
+                    </div>
+                    <div id="cadre_evolution">
+                        <p>Evolue en : </p>
+                        <div id="evolution"></div>
+                    </div>
+                </div>    
+            </div>
         </div>
-     </div>
-        </main>
-        <footer></footer>
+    </main>
+    <footer></footer>
 </body>
 
 </html>
