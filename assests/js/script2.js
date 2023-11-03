@@ -34,26 +34,26 @@ async function axiosType(){
         image.setAttribute("src","/assests/image/question.png")
         document.getElementById("cadre_travail_image").appendChild(image);
 
-    let hp = document.getElementById("hp");
-        hp.innerText = "?";
+    // let hp = document.getElementById("hp");
+    //     hp.innerText = "?";
 
-    let attack = document.getElementById("attack");
-        attack.innerText = "?";
+    // let attack = document.getElementById("attack");
+    //     attack.innerText = "?";
 
-    let defense = document.getElementById("defense");
-        defense.innerText = "?";
+    // let defense = document.getElementById("defense");
+    //     defense.innerText = "?";
 
-    let special_attack = document.getElementById("special_attack");
-        special_attack.innerText = "?";
+    // let special_attack = document.getElementById("special_attack");
+    //     special_attack.innerText = "?";
 
-    let special_defense = document.getElementById("special_defense");
-        special_defense.innerText = "?";
+    // let special_defense = document.getElementById("special_defense");
+    //     special_defense.innerText = "?";
 
-    let speed = document.getElementById("speed");
-        speed.innerText = "?";
+    // let speed = document.getElementById("speed");
+    //     speed.innerText = "?";
 
-    let cadreTitre = document.getElementById("cadre_travail_titre");
-        cadreTitre.innerText= "???"
+    // let cadreTitre = document.getElementById("cadre_travail_titre");
+    //     cadreTitre.innerText= "???"
     
         
           
@@ -96,6 +96,7 @@ function listParNom(){
         selectionList.appendChild(option);
     });
 selectionList.addEventListener("change", ()=>{
+    document.querySelector("#cadre_travail_stats").innerHTML = "";
     if(selectionList.value == 0){
         image.setAttribute("src", "/assests/image/question.png");
     }else{
@@ -109,38 +110,54 @@ selectionList.addEventListener("change", ()=>{
         //     let cadreElement = document.getElementById("elements");
         //     cadreElement.innerText = trouvUnpkemon.apiTypes.element.name;
            
+        for (const [key, value] of Object.entries(trouvUnpkemon.stats)) {
+            console.log(`${key}: ${value}`);
+
+           let unStats = document.createElement("div");
+                unStats.textContent = key +" : "+ value;
+                document.getElementById("cadre_travail_stats").appendChild(unStats);
+
+          }
     let cadreElement = document.querySelector("#elements");
     let cadreEvolution = document.querySelector("#evolution");
         // });
-            /// géré mes types des chaque pokemons et mes evoulutions
+            /// géré mes types des chaque pokemons et mes types
+
+//---------------------------            
         for (let index = 0; index < trouvUnpkemon.apiTypes.length; index++) {
             cadreElement.textContent = trouvUnpkemon.apiTypes[index].name;
         }
+         /// géré mes types des chaque pokemons et mes evoulutions
         for (let index = 0; index < trouvUnpkemon.apiEvolutions.length; index++) {
             cadreEvolution.textContent = trouvUnpkemon.apiEvolutions[index].name;
-            console.log();
         }
-            console.log("Trouve : ", trouvUnpkemon);
-            let recuperNomPokemon = trouvUnpkemon.name;
-                cadreTitre.innerText=recuperNomPokemon;
-            let recupperHp = trouvUnpkemon.stats.HP;
-            let recupperAttack = trouvUnpkemon.stats.attack;
-            let recupperDfense = trouvUnpkemon.stats.defense;
-            let recupperSpecialAttack = trouvUnpkemon.stats.special_attack;
-            let recupperSpecialDefense = trouvUnpkemon.stats.special_defense;
-            let recupperSpeed = trouvUnpkemon.stats.speed;
+           
 
-                hp.innerText =+ recupperHp;
-                attack.innerText=+ recupperAttack;
-                defense.innerText =+ recupperDfense;
-                special_attack.innerText =+ recupperSpecialDefense;
-                special_defense.innerText =+ recupperSpecialAttack;
-                speed.innerText =+ recupperSpeed;
+
+
+
+
+
+            // let recuperNomPokemon = trouvUnpkemon.name;
+            //     cadreTitre.innerText=recuperNomPokemon;
+            // let recupperHp = trouvUnpkemon.stats.HP;
+            // let recupperAttack = trouvUnpkemon.stats.attack;
+            // let recupperDfense = trouvUnpkemon.stats.defense;
+            // let recupperSpecialAttack = trouvUnpkemon.stats.special_attack;
+            // let recupperSpecialDefense = trouvUnpkemon.stats.special_defense;
+            // let recupperSpeed = trouvUnpkemon.stats.speed;
+
+            //     hp.innerText =+ recupperHp;
+            //     attack.innerText=+ recupperAttack;
+            //     defense.innerText =+ recupperDfense;
+            //     special_attack.innerText =+ recupperSpecialDefense;
+            //     special_defense.innerText =+ recupperSpecialAttack;
+            //     speed.innerText =+ recupperSpeed;
 
             // let champType = document.getElementById("elements");
             //     champType.innerText="";
-            let champEvolution = document.getElementById("evolution") ;
-                champEvolution.innerText="";    
+            // let champEvolution = document.getElementById("evolution") ;
+            //     champEvolution.innerText="";    
     
     }
 
@@ -172,10 +189,9 @@ let trouvUnpkemon = datasAxios.find((pokemon)=> pokemon.name == selectionList.va
                 option.innerText= pokemon.name;
                 selectionList.appendChild(option);
             });
-        }
-            
+        }     
     }                
-listParElement();
+// listParElement();
 function listParElement(){
     selectionList.addEventListener("change", ()=>{
         if(selectionList.value == 0){
@@ -183,6 +199,7 @@ function listParElement(){
         }else{
             let trouvUnpkemon = datasAxios.find((pokemon)=> pokemon.name == selectionList.value);
             console.log("seléction de pokemon  :" ,selectionList.value);
+
             // console.log("pokemon type: ", trouvUnpkemonApiTypes.name);
             // console.log("pokemon trouve", trouvUnpkemon.image);
             // console.log("API types " , trouvUnpkemon.type[1]);
@@ -190,10 +207,7 @@ function listParElement(){
             datasAxiostype.forEach(element => {
                 let listPokemonParType = document.createElement("li");
                 listParElement.innerText = element.name;
-                selectionList.appendChild(listParElement);
-                   
-                        
-
+                selectionList.appendChild(listPokemonParType);
             });
             image.setAttribute("src",trouvUnpkemon.image)
         

@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: "Spirit Ginger", sans-serif;
+  font-family:  'Collegerion', sans-serif;;
   margin: 0;
   padding: 0;
 }
@@ -25,7 +25,8 @@ h1 {
 #champ_parent {
   margin: 0 auto;
   margin-top: 10px;
-  width: 550px;
+  width: 800px;
+  height:800px;
   background-color: rgba(74, 177, 241, 0.813);
   border-radius: 10px;
   font-size: 20px;
@@ -105,9 +106,9 @@ img {
   font-size: 30px;
 }
 #cadre_travail_data {
-  display: flex;
-  justify-content: space-between;
-  /* border: 1px solid rgb(31, 237, 252); */
+  /* display: flex; */
+  /* justify-content: space-between; */
+  border: 1px solid rgb(31, 237, 252);
 }
 #button_recherche {
   align-items: center;
@@ -157,17 +158,20 @@ img {
 
 #cadre_travail_stats {
   display: flex;
+  flex-direction: column;
 }
 #cadre_elements {
   display: flex;
   justify-content: center;
   margin-top: 30px;
-  margin-right: 2px;
+  margin-right: 10px;
 }
 #cadre_evolution {
   display: flex;
   justify-content: center;
   margin-top: 30px;
+  margin-right: 10px;
+  
 }
 
 #cadre_liste {
