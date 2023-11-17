@@ -85,7 +85,14 @@ datasAxios.forEach(pokemon => {
 
 selection.addEventListener("change", () => {
     if (selection.value == 0) {
-        document.querySelector(".img-choix").setAttribute("src", "/assests/image/question.png");
+        imageChoix.setAttribute("src", "/assests/image/question.png");
+        hpElement.innerText= "HP : "
+        attackElement.innerText= "Attack : ";
+        defensElement.innerText ="Defense : ";
+        specialAttackElement.innerText= "special Attake : "
+        specialDefElement.innerText = "Special defense : "; 
+        speedElement.innerText= "Speed : "
+
         
         
     } else {
